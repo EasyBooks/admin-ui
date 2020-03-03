@@ -5,23 +5,20 @@ import Dashboard from '@/components/Dashboard';
 import Main from '@/components/Main';
 
 // 用户管理
-import UserList from '@/components/user/userList';
+import UserList from '@/components/user/UserList';
+import AuthorList from '@/components/user/AuthorList';
 
 // 小说管理
-import SendFile from '@/components/govfile/SendFile';
-import AcceptFile from '@/components/govfile/AcceptFile';
-import AcceptShow from '@/components/govfile/AcceptShow';
+import BookList from '@/components/book/BookList';
+import TypeList from '@/components/book/TypeList';
 
-//办公管理
+// 订单管理
 import Supervise from '@/components/office/Supervise';
 import SuperviseTask from '@/components/office/SuperviseTask';
 import CarList from '@/components/office/CarList';
 import CarAdd from '@/components/office/CarAdd';
 import MeetList from '@/components/office/MeetList';
 import MeetAdd from '@/components/office/MeetAdd';
-
-import BookList from '@/components/book/list';
-import BookCategoryList from '@/components/bookcategory/list';
 
 import UserChangePwd from '@/components/user/changepwd';
 import UserProfile from '@/components/user/profile';
@@ -61,27 +58,15 @@ let router = new Router({
           component: Main
         },
         {
-          path: '/person/todo',
+          path: '/userList',
           component: UserList,
           name: '用户列表',
           menuShow: true
         },
         {
-          path: '/geren',
-          component: Dashboard,
-          name: '个人通讯',
-          menuShow: true
-        },
-        {
-          path: '/jihua',
-          component: Dashboard,
-          name: '工作计划',
-          menuShow: true
-        },
-        {
-          path: '/wendan',
-          component: Dashboard,
-          name: '个人文档',
+          path: '/authorList',
+          component: AuthorList,
+          name: '作家列表',
           menuShow: true
         }
       ]
@@ -94,33 +79,15 @@ let router = new Router({
       iconCls: 'iconfont icon-survey1', // 图标样式class
       children: [
         {
-          path: '/govfile/sendfile',
-          component: SendFile,
-          name: '发文管理',
+          path: '/book/BookList',
+          component: BookList,
+          name: '小说列表',
           menuShow: true
         },
         {
-          path: '/govfile/acceptfile',
-          component: AcceptFile,
-          name: '收文管理',
-          menuShow: true
-        },
-        {
-          path: '/govfile/acceptshow',
-          component: AcceptShow,
-          name: '收文管理',
-          menuShow: false
-        },
-        {
-          path: '/guidan',
-          component: Dashboard,
-          name: '归档文件',
-          menuShow: true
-        },
-        {
-          path: '/chaxun',
-          component: Dashboard,
-          name: '公文查询',
+          path: '/book/TypeList',
+          component: TypeList,
+          name: '分类列表',
           menuShow: true
         }
       ]
@@ -128,7 +95,7 @@ let router = new Router({
     {
       path: '/',
       component: Home,
-      name: '日志管理',
+      name: '订单管理',
       menuShow: true,
       iconCls: 'iconfont icon-electronics',
       children: [
@@ -301,7 +268,7 @@ router.beforeEach((to, from, next) => {
   } else {
     let user = JSON.parse(window.localStorage.getItem('access-user'));
     if (!user) {
-      next({ path: '/login' });
+      next({path: '/login'});
     } else {
       next();
     }

@@ -14,8 +14,8 @@
         <el-card style="background:#67C23A;">
           <div class="todo_l">
             <el-row>
-              <el-col :span="12" class="tl"><span>待办事项</span></el-col>
-              <el-col :span="12" class="tr"><el-button type="text" @click="handleGoUrl('/person/todo')"><i>25</i></el-button></el-col>
+              <el-col :span="8" class="tl"><span>昨日登录</span></el-col>
+              <el-col :span="16" class="tr"><el-button type="text" @click="handleGoUrl('/person/todo')"><i>57899</i></el-button></el-col>
             </el-row>
           </div>
         </el-card>
@@ -24,8 +24,8 @@
         <el-card style="background:#E6A23C;">
           <div class="todo_l">
             <el-row>
-              <el-col :span="12" class="tl"><span>日程安排</span></el-col>
-              <el-col :span="12" class="tr"><el-button type="text" @click="handleGoUrl('/person/timelist')"><i>30</i></el-button></el-col>
+              <el-col :span="8" class="tl"><span>昨日注册</span></el-col>
+              <el-col :span="16" class="tr"><el-button type="text" @click="handleGoUrl('/person/timelist')"><i>588</i></el-button></el-col>
             </el-row>
           </div>
         </el-card>
@@ -34,8 +34,8 @@
         <el-card style="background:#F56C6C;">
           <div class="todo_l">
             <el-row>
-              <el-col :span="12" class="tl"><span>我的督办</span></el-col>
-              <el-col :span="12" class="tr"><el-button type="text" @click="handleGoUrl('/office/supervisetask')"><i>18</i></el-button></el-col>
+              <el-col :span="8" class="tl"><span>会员新增</span></el-col>
+              <el-col :span="16" class="tr"><el-button type="text" @click="handleGoUrl('/office/supervisetask')"><i>228</i></el-button></el-col>
             </el-row>
           </div>
         </el-card>
